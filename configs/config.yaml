@@ -1,0 +1,25 @@
+# Default training configuration
+seed: 42
+data:
+  root: data/synthetic
+  signal_csv: data/synthetic/sample_signals.csv
+  image_dir: data/synthetic/sample_images
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  signal_length: 1024
+  image_size: 64
+training:
+  batch_size: 32
+  epochs: 5
+  lr: 0.001
+  weight_decay: 0.0
+  num_workers: 0
+model:
+  signal_channels: 1
+  image_channels: 1
+  fusion_hidden: 64
+  dropout: 0.2
+logging:
+  out_dir: runs
+  ckpt_name: best_model.pt
